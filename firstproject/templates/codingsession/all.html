@@ -37,7 +37,18 @@
          <section id="one">
             <h2>Upcoming Live Sessions</h2>
             <!-- Live Sessions Start -->
-               
+               <div class="row">
+                  {% for coding_session in coding_sessions %}
+                     <article class="6u 12u$(xsmall) work-item">
+                        <iframe width="420" height="248" src="{{ coding_session.link }}"
+                                allow="accelerometer; autoplay; encrypted-media; gyroscope;
+                                picture-in-picture" allowfullscreen>
+                        </iframe>
+                        <h3>{{ coding_session.name }}</h3>
+                        <p>Starts at: <strong>{{ coding_session.starting_time }}</strong></p>
+                     </article>
+                  {% endfor %}
+               </div>
             <!-- Live Sessions End -->
          </section>
          <!-- Two -->
